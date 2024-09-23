@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        h1 + h2 {
+            color: red;
+        }
+
+        h4 + h2{ /* 앞을 기준으로 같은 형제라인에 속한 뒤에 태그를 찾는다. 단, 위로는 읽지않음(인접형제)*/
+            color: lightblue;
+        }
+
+        h4 ~ h2{ /*위랑 동일하지만 밑에 있는 모든 형제를 찾음*/
+            color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <h1>one</h1>
+    <h2>two</h2>
+    <h2>three</h2>
+    <h4>four</h4>
+    <h2>five</h2>
+    <h2>six</h2>
+</body>
+</html>
