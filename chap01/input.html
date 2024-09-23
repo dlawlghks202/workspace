@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text"/><br/> <!-- 한줄 데이터 입력 -->
+    <input type="password" /><br/> <!-- hide 처리 -->
+    <input type="radio" /><br/><!-- 하나만-->
+    <input type="checkbox" /><br/> <!-- 여러개-->
+    <input type="button" value="click"/> <br/>
+    <input type="submit" /> <br/>
+    <input type="reset" /> <br/>
+    <input type="file" /> <br/>
+    <input type="date" /> <br/>
+    <hr/>
+
+    <h1>Radio Test</h1>
+    남자 <input type="radio" name="gender"/> <!--라디오 버튼은 같은 name으로 묶인다-->
+    여자 <input type="radio" name="gender"/>
+
+    <hr/>
+    <h1>CheckBox Test</h1>
+    야구 <input type="checkbox" name="sports"/>
+    농구 <input type="checkbox" name="sports"/>
+    축구 <input type="checkbox" name="sports"/>
+    배구 <input type="checkbox" name="sports"/>
+
+    <hr/>
+    <form action="receive.html" method="post">
+        <input type="text" name="id"/><br/>
+        <input type="password" name="pwd"/><br/>
+        <input type="text" name="name"/><br/>
+        <input type="number" name="age" /><br/>
+        <input type="email" name="email"/><br/>
+        <input type="tel" name="tel"/><br/>
+        <input type="color" value="#FF0000" />
+        <input type="range" value="70"/>
+        <input type="hidden" value="test"/><br/>
+        <input type="submit" value="저장" />
+        <input type="reset" value="초기화" />
+    </form>
+
+
+</body>
+</html>

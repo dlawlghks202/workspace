@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<head>
+    <style>
+        *{
+            color:red;
+        }
+         th{
+            color: blue;
+         }
+         #memberId{
+            background-color: yellow;
+         }
+         .header{
+            background-color: aqua;
+         }
+         a[href]{
+            color: blueviolet;
+         }
+         input[type="password"]{
+            display: none;
+         }
+         a[href ^="www"]{ 
+            color: chartreuse;
+         }
+         a[href $="net"]{
+            color: aqua;
+         }
+         a[href *= "google"]{
+            background-color: darkblue;
+         }
+         p,span,div{
+            color: pink;
+         }
+    </style>
+</head>
+<body>
+    <h1 class="header">First CSS</h1>
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <td><input id="memberId" type="text"/></td>
+        </tr>
+        <tr>
+            <th>PW</th>
+            <td><input type="password" /></td>
+        </tr>
+        <tr>
+            <th colspan="2">
+                <a href="#">로그인</a>
+                <a>초기화</a>
+            </th>
+        </tr>
+    </table>
+    <hr/>
+    <a href="www.naver.com">naver</a><br/>
+    <a href="www.google.com">google</a><br/>
+    <a href="daum.net">daum</a><br/>
+
+    <p>
+        첫 번째 단락
+    </p>
+
+    <div>
+        첫 번째 div
+    </div>
+
+    이 문장에 <span>일부 적용 span</span>
+</body>
+</html>

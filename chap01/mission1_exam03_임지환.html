@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<style>
+    form > *{
+        margin-left: 10px;
+        margin-bottom: 10px;
+        margin-right: 5px;
+    }
+    textarea{
+        resize: none;
+    }
+</style>
+<body>
+    <form style="border: 2px solid black; width: 800px;">
+        <h1>Payment Form</h1>
+        <hr/>
+        <p>Required fields are followed by *</p>
+        <h2>Contact Information</h2>
+        &nbsp;Name: * <input type="text" placeholder="smith" />
+        <fieldset style="height: 70px; align-content: center;">
+            <legend>Gender *</legend>
+            Male<input type="radio" name="gender" />
+            Female<input type="radio" name="gender" />
+            Other<input type="radio" name="gender" />
+        </fieldset>
+        &nbsp;Address:<br/>
+        <textarea rows="5" cols="110" placeholder="Enter the address"></textarea>
+        &nbsp;Email: *<input type="email" name="email" placeholder="smith@gmail.com" /><br/>
+        &nbsp;Pincode: *<input type="text" name="code" maxlength="6" placeholder="123456" />
+        <hr/>
+        <h2>Payment Information</h2>
+        &nbsp;Card Type: * 
+        <select>
+            <option selected>--Select a Card Type--</option>
+            <option>Rupay</option>
+            <option>Mastercard</option>
+            <option>Visa</option>
+        </select><br/>
+        &nbsp;Card number: *<input type="text" maxlength="19" placeholder="1111-2222-3333-4444" /><br/>
+        &nbsp;Expiration Date: *<input type="date"/><br/>
+        &nbsp;CVV: *<input type="text" /><br/>
+        <input type="button" name="submit" value="Pay Now"/>  
+    </form>
+</body>
+</html>
