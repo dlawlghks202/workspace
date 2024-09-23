@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        *{
+            font-family: cursive;  
+            font-weight: 900; 
+            font-size: 30px;
+            font-style: italic;
+            font-variant: small-caps; /* 소문자를 대문자로 */
+        }
+
+        div > *:first-child{
+            color: red;
+        }
+        p:last-child{
+            color: violet;
+        }
+
+        p:nth-child(3){
+            background-color: aqua;
+        }
+
+        p:nth-of-type(2){
+            background-color: darkcyan;
+        }
+
+        p:nth-last-of-type(2){
+            background-color: yellow;
+        }
+        p:first-of-type{
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <p>one</p>
+    <div>
+        <p>two</p>
+        <span>three</span>
+        <p>four</p>
+    </div>
+    <div>
+        <p>five</p>
+        <span>six-1</span>
+        <span>six-2</span>
+        <p>seven</p>
+    </div>
+    <p>eight</p>
+</body>
+</html>

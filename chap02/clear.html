@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+
+        div {
+            width: 100px;
+            height: 100px;
+        }
+
+        .top{
+            /* width: 400px; */
+            height: 400px;
+            background-color: yellow;
+            padding: 20px;
+        }
+   
+        .red {
+            background-color: red;
+            width: 100px;
+            height: 100px;
+            float: left;
+        }
+
+        .blue {
+            background-color: blue;
+            float: left;       
+        }
+
+        .top::after {
+            /* display: block;
+            content: ""; */
+            clear: both;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="top">
+        <div class="red"></div>
+        <div class="blue"></div>
+    </div>
+</body>
+</html>

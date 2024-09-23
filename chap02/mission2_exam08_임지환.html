@@ -1,0 +1,59 @@
+<!doctype html>
+<html>
+
+  <head>
+    <title>Box position</title>
+    <style>
+        div {
+            border: 1px solid greenyellow;
+            width: 200px;
+            height: 100px;
+            background-color: silver;
+        }
+        div:nth-of-type(1){
+            position: static;
+            margin: auto;
+        }
+
+        div:nth-of-type(4){
+            width: 150px;
+            position: absolute;
+            top: 80px;
+            left: 50px;
+        }
+
+        div:nth-of-type(2){
+            position: relative;
+            margin: auto;
+            left: 30px; 
+            top: -30px;
+        }
+
+        div:nth-of-type(3){
+            position: relative;
+            margin: auto;
+            left: 60px; 
+            top: -60px;
+        }
+
+        div:nth-of-type(5){
+            width: 100px;
+            position: fixed;
+            left: 1500px;
+            top: 300px;
+        }
+    </style>
+  </head>
+
+  <body>
+    <H2>mission 8</H2>
+    <hr>
+    <div>Box-1: static</div>
+    <div>Box-2: relative</div>
+    <div>Box-3: relative</div>
+    <hr>
+    <div>Box-4: absolute</div>
+    <div>Box-5: fixed</div>
+  </body>
+
+</html>

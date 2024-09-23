@@ -9,9 +9,42 @@
             color: aqua;           
         }
 
+        .hv:hover{
+            background-color: chocolate;
+        }
+
+        button:active{
+            color: red;
+        }
+
+        #focusTest:focus{
+            background-color: bisque;
+        }
+
+        #chkTest:checked + label{
+            color: red;
+        }
+
+    input[type="text"]:disabled , button:disabled{
+        background-color: deeppink;
+    }
+
+    button:enabled{
+        background-color: blue;
+    }
+
     </style>
 </head>
 <body>
+    <p class="hv">hover</p>
+    <button>active</button><br/>
+    <input id="focusTest" type="text" />
+    <input id="chkTest" type="checkbox" />
+    <label for="chkTest">체크박스</label>
+    <input type="text" disabled />
+    <button disabled>버튼</button>
+    <button>일반버튼</button>
+    <hr/>
     <a href="https://www.google.com">구글</a><br/>
     <a href="https://www.lgcns.co.kr">cns</a><br/>
 </body>

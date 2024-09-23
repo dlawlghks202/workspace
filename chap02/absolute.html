@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            border: 1px solid black;
+        }
+
+        #one { /* absolute는 자리 벗어나면 다른애가 먹음 */
+            background-color: blue;
+            position: absolute;
+            left: 80px;
+            top: 50px;
+        }
+
+        #two {
+            background-color: green;
+            position: absolute;
+            left: 150px;
+            top: 100px;
+            z-index: 100;
+        }
+
+        #three {
+            background-color: yellow;
+            position: absolute;
+            left: 220px;
+            top: 150px;
+            z-index: 200;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="one"></div>
+    <div id="two"></div>
+    <div id="three"></div>
+</body>
+</html>
