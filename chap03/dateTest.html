@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+        const today = new Date();
+        document.write(today+"<br/>");
+
+        const strDay = new Date("2020-01-02");
+        document.write(strDay+"<br/>");
+
+        today.setDate(today.getDate()+100);
+        document.write(today);
+
+        let minus = (today.getTime() - strDay.getTime())/60/60/24/1000/365;
+        document.write(minus);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script>
+        let sum = 0;
+        let randomArr = [];
+        let tmpArr = [];
+        let s = "";
+        for (let i = 0; i < 3; i++) {
+            var random = parseInt(Math.random() * 6) + 1;
+            var mulNum = random ** 3;
+            randomArr[i] = mulNum;
+            sum += mulNum;
+            document.write(random + " : " + mulNum + "<br/>");
+        }
+        document.write("sum : " + sum + "<br/>");
+        for (let i = 0; i < randomArr.length; i++) {
+            tmpArr[i] = randomArr[i].toString().padStart(3, '0');
+        }
+        for(let i=0;i<tmpArr.length;i++){     
+            s += tmpArr[i].toString().charAt(i); 
+        }
+        document.write("s : " + s);
+
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

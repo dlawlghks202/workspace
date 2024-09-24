@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+        const productList = [];
+
+        function Product(num, name, price){
+            this.num = num;
+            this.name = name;
+            this.price = price;
+        }
+
+        productList[0] = new Product(1,"Computer", 5000);
+        productList[1] = new Product(2,"IPad", 3000);
+        productList[2] = new Product(3,"Galaxy", 4000);
+        
+        let newData = prompt();
+        const dataList = newData.split(",");
+
+        productList[productList.length] = new Product(
+            dataList[0], dataList[1], dataList[2]
+        );
+
+        let sum=0;
+
+        for(let index in productList){
+            let num = productList[index].num;
+            let name = productList[index].name;
+            let price = productList[index].price;
+            sum += Number(price);
+            console.log(`${num} , ${name} , ${price}`);
+        }
+        document.write(sum/productList.length);
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

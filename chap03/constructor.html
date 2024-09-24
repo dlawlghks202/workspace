@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+        const Test = {
+            one : "test.....",
+        }
+
+        function Exam(first,second){
+            this.first = first;
+            this.second = second;
+
+            this.printData = function(){
+                console.log(first + " :: " + second);
+            }
+        }
+
+       // const test_1 = new Test();
+        const exam_1 = new Exam(1,2);
+        exam_1.printData();
+
+        const exam_2 = new Exam(10,20);
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
