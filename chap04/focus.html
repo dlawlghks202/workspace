@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+        function validationCheck(){
+            if(document.myForm.id.value === ""){
+                alert("id입력");
+                document.myForm.id.focus();
+                return false;
+            }
+            if(document.myForm.pwd.value === ""){
+                alert("비번입력");
+                document.myForm.pwd.focus();
+                return false;
+            }
+            document.myForm.submit();
+        }
+    </script>
+</head>
+<body>
+    <form name="myForm" action="windowFunc.html" method="get">
+        ID : <input type="text" name="id" /><br/>
+        PWD : <input type="password" name="pwd" /><br/>
+    </form>
+    <button onclick="validationCheck()">전소옹</button>
+</body>
+</html>

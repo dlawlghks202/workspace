@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+        function checkedTest(){
+            let radioList = document.querySelectorAll("[type='radio']");
+            let checkList = document.querySelectorAll("[type='checkbox']");
+            let value="";
+            // for(let i=0;i<radioList.length;i++){
+            //     if(radioList[i].checked){
+            //         value = radioList[i].value;
+            //     }
+            // }
+            // for(let i=0;i<checkList.length;i++){
+            //     if(checkList[i].checked){
+            //         value += checkList[i].value + ", ";
+            //     }
+            // }
+            // console.log(value);
+            let selVal = "";
+            let sel = document.querySelectorAll("option");
+            for(let i=0;i<sel.length;i++){
+                if(sel[i].selected){
+                    selVal = sel[i].value;
+                }
+            }console.log(selVal);
+        }
+    </script>
+</head>
+<body>
+    first : <input type="radio" name="one" value="first" />
+    second : <input type="radio" name="one" value="second" />
+    <hr/>
+    야구 : <input type="checkbox" name="sports" value="baseball" />
+    축구 : <input type="checkbox" name="sports" value="soccer" />
+    <hr/>
+    계절 <select>
+        <option>봄</option>
+        <option>여름</option>
+        <option>가을</option>
+        <option>겨울</option>
+    </select> 
+    <button onclick="checkedTest()">확인</button>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        div {
+            width: 300px;
+            height: 300px;
+            border: 1px solid black;
+        }
+    </style>
+    <script>
+        function txtFieldHandler(){
+            alert("클릭 이벤트 발생");
+        }
+
+        function keyHandler(inputEle, event){
+            console.log(event.key, inputEle.value);
+
+            if(event.key === "Enter"){
+                console.log("submit 하세요 제발");
+            }
+        }
+
+        function focusHandler(event){
+            alert("포커스!");
+            
+        }
+
+        function overHandler(event){
+            document.querySelector("p").innerText = "mousemove : " + event.x + " : " + event.y;
+            document.querySelector("div").setAttribute("style","background-color:red");
+        }
+
+        function leaveHandler(event){
+            document.querySelector("div").setAttribute("style","background-color:white");
+        }
+    </script>
+</head>
+<body>
+    <input type="text" onkeyup="keyHandler(this,event)" onfocus="focusHandler()"/>    
+    <div onmousemove="overHandler(event)" onmouseleave="leaveHandler(event)"></div>
+    <p></p>
+</body>
+</html>

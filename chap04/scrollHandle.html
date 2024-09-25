@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        body{
+            width: 2800px;
+            height: 1000px;
+        }
+
+        div{
+            position: fixed;
+        }
+    </style>
+    <script>
+        function scrTo(){
+            window.scrollTo(100,1000);
+        }
+        function scrBy(){
+            window.scrollBy(100,1000);
+        }
+    </script>
+</head>
+<body>
+    <div>
+        <button onclick="scrTo()">스크롤to~</button>
+        <button onclick="scrBy()">스크롤by~</button>
+    </div>
+    
+</body>
+</html>

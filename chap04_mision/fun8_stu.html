@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script>
+   let xyz = function(birth){
+      let gender = "";
+      if(birth.substr(7,1) == '1' ){
+         gender = "남";
+      }if(birth.substr(7,1) == '2'){
+         gender = "여";
+      }return gender;
+   }
+
+   var gender = xyz('811025-1234567');
+   console.log("성별", gender );
+</script>
+
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        body{
+            width: 2000px;
+            height: 2000px;
+        }
+        button{
+            position: fixed;
+        }
+    </style>
+    <script>
+        function printInfo(){
+            console.log("안쪽 너비 : ",window.innerWidth);
+            console.log("안쪽 높이 : ",window.innerHeight);
+            console.log("브라우저 너비 : ",window.outerWidth);
+            console.log("브라우저 높이 : ",window.outerHeight);
+            console.log("위쪽 간격 : " + window.screenTop);
+            console.log("좌측 간격 : " + window.screenLeft);
+            console.log("스크롤 위치(x) : ",window.scrollX);
+            console.log("스크롤 위치(y) : ",window.scrollY);
+        }
+    </script>
+</head>
+<body>
+    <button onclick="printInfo()">ㄱㄱ</button>
+</body>
+</html>

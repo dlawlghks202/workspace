@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+    function show(){
+      let str = document.querySelector("#v1").value;
+      let tmp = "";
+      let wordArr = [];
+      let wordcnt = 0;
+      let alphacnt = 0;
+      console.log(str);
+      wordArr = str.split(' ');
+      console.log(wordArr);
+      for(let i=0;i<str.length;i++){
+        if(str.charAt(i) == ' '){
+          continue;
+        }
+        tmp += str.charAt(i);
+      }
+      alphacnt = tmp.length;
+      wordcnt  = wordArr.length;
+      document.querySelector("#result").innerHTML =
+      "단어수:" + wordcnt + "<br/>" + 
+      "글자수:" + alphacnt;
+    }
+</script>
+</head>
+<body>
+<h3>문자열 관리</h3>
+값:<input type="text" name="v1" id="v1" value="How are you? fine thank you">
+<button onclick="show()">데이터 분석</button><br>
+<div id="result"></div>
+</body>
+</html>

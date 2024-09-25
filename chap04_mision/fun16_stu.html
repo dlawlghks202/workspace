@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script>
+   let myAge = function(ssn){
+    let now = new Date();
+    let nowYear = now.getFullYear();
+    let birth = ssn.substr(0,4);
+    return nowYear-birth;
+   }
+
+   var ssn = '1981/10/20';
+   var age = myAge(ssn);
+   console.log("현재 나이:", age );
+</script>
+
+</head>
+<body>
+
+</body>
+</html>

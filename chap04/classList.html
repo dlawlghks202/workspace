@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        .red-color {
+            color: red;
+        }
+
+        .font-20 {
+            font-size: 120px;
+        }
+
+    </style>
+</head>
+<body>
+    <p class="sample">text</p>
+    <p id="tgg">toggle test</p>
+    <button onclick="tg()">dd</button>
+    <script>
+        let ele = document.querySelector("p");
+        ele.classList.add("red-color","font-20");
+        ele.classList.add("red-color");
+
+        ele.classList.remove("sample");
+
+        let t = document.querySelector("#tgg").toggl;
+
+        // setInterval(function(){
+        //     t.classList.toggle("red-color");
+        // },1000);
+
+        function tg(){
+            t.classList.toggle("red-color");
+        }
+    </script>
+</body>
+</html>

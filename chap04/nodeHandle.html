@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+</head>
+<body>
+    <div>
+        <ul>
+            <li>one</li>
+            <li>two</li>
+            <li>three</li>
+        </ul>
+    </div>    
+    <div id="second">
+        <input type="text" />
+    </div>
+
+    <script>
+        let txt = document.createTextNode("four");
+        let liEle = document.createElement("li");
+        let ulEle = document.querySelector("ul");
+
+        liEle.appendChild(txt);
+        ulEle.appendChild(liEle);
+        
+        let inputEle = document.createElement("input");
+        inputEle.setAttribute("type","submit");
+        inputEle.setAttribute("value","버튼!!");
+
+        document.querySelector("#second").appendChild(inputEle);
+
+
+        let lilist = document.querySelectorAll("li");
+        for(let i=0;i<lilist.length;i++){
+            if(lilist[i].innerText=="two"){
+                ulEle.removeChild(lilist[i]);
+                break;
+            }
+        }
+
+    </script>
+</body>
+</html>

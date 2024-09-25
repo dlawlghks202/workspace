@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+</head>
+<body>
+    <a href="https://www.daum.net">다음</a>
+    <script>
+        let ele = document.querySelector("a");
+        //ele.style.color = "red";
+        ele.setAttribute("style", "color:green");
+        ele.setAttribute("href","https://www.naver.com");
+        ele.innerText = "네이버";
+
+        let v = ele.getAttribute("href");
+        console.log(v);
+
+        ele.removeAttribute("href");
+
+    </script>
+</body>
+</html>

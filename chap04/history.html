@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+        console.log(history.length);
+
+        function myBack(){
+            history.back();
+        }
+
+        function myForward(){
+            history.forward();
+        }
+
+        function move(step){
+            history.go(step); // 음수는 이전페이지 , 양수는 다음페이지
+        }
+    </script>
+</head>
+<body>
+    <button type="button" onclick="myBack()">뒤로가기</button>
+    <button type="button" onclick="myForward()">앞으로가기</button>
+    <button type="button" onclick="move(2)">고</button>
+</body>
+</html>

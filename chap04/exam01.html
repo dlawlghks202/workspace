@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        h1 {
+            color: red;
+        }
+
+        .color {
+            color: maroon;
+        }
+
+        .fontStyle {
+            font-style: italic;
+        }
+    </style>
+    <script>
+        function changeColor(){
+            let h = document.querySelector("h1");
+            //h.setAttribute("style","color:blue");
+            h.setAttribute("class","color fontStyle");
+        }
+
+        function changeText(){
+            let h = document.querySelector("div");
+            h.innerHTML += "zzz<span style='color:pink'>스판</span>";
+        }
+    </script>
+</head>
+<body>
+    <button onclick="changeColor()">체인지 컬러 </button>
+    <button onclick="changeText()">체인지 텍스트 </button>
+    <h1>블루</h1>
+    <div></div>
+</body>
+</html>

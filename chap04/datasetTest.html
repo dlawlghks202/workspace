@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+</head>
+<body>
+    <p data-name="TV" data-price="10,000" data-count="15">TV</p>
+    <p data-name="Radio" data-price="20,000" data-count="123">Radio</p>
+
+    <script>
+        let productList = document.querySelectorAll("p");
+        console.log("상품 종류 : " + productList.length);
+
+        for(let i=0;i<productList.length;i++){
+            let pData = productList[i].dataset;
+
+            let name = pData.name;
+            let price = pData.price;
+            let count = pData.count;
+
+            console.log(`${name} : ${price} : ${count}`)
+
+            // let price = productList[i].getAttribute("data-price"); 
+            // let name = productList[i].getAttribute("data-name"); 
+            // let count = productList[i].getAttribute("data-count"); 
+            // console.log(name + " , " + price + " , " + count);
+            }
+    </script>
+</body>
+</html>
