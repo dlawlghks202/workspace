@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        div {
+            width: 300px;
+            height: 300px;
+            left: 0;
+            top: 0;
+            margin: 0 0;
+            border: 1px solid black;
+        }
+    </style>
+    <script>
+        const init = () =>{
+            let div = document.querySelector("div");
+
+            div.onclick = (event) =>{
+                console.log(event.clientX + " : " + event.clientY);
+            }
+        }
+    </script>
+</head>
+<body onload="init()">
+    <div></div>
+</body>
+</html>

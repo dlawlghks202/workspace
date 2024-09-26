@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+        const myLoad = () =>{
+            let btn1 = document.querySelector("#clk_1");
+            let btn2 = document.querySelector("#clk_2");
+            let btn3 = document.querySelector("#clk_3");
+            //btn.addEventListener("click",myHandler);
+            btn1.addEventListener("click",function(){
+                alert("1번");
+            });
+
+            btn2.addEventListener("click",myHandler);
+
+            // btn3.onclick = function(){
+            //     alert("3번");
+            // };
+            btn3.onclick = () =>{
+                alert("3번");
+            };
+        }
+
+        const myHandler = () => {
+            alert("2번");
+        }
+    </script>
+
+</head>
+<body onload="myLoad()">
+    <button onclick="myHandler()">클릭-1</button>
+    <button id="clk_1">클릭-1</button>
+    <button id="clk_2">클릭-3</button>
+    <button id="clk_3">클릭-4</button>
+
+</body>
+</html>

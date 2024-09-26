@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+   
+   function confirm(){
+    let pwd = document.querySelector("#passwd");
+    let pwdchk = document.querySelector("#passwd1");
+    let result = document.querySelector("#result");
+    if(pwd.value === pwdchk.value){
+            result.innerHTML = "비밀번호 일치";
+        }else if(pwd.value !== pwdchk.value){
+            result.innerHTML = "비밀번호 불일치";
+        }
+   }
+
+</script>
+</head>
+<body>
+ 비밀번호 확인 구현<br>
+ 비밀번호<input type="text" name="passwd" id="passwd" onkeyup="confirm()"><br>
+ 비밀번호 재확인<input type="text" name="passwd1" id="passwd1" onkeyup="confirm()">
+ <span id='result'></span>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+      //이미지 정보를 배열에 저장하여 관리
+      var arr = ["a.jpg","b.jpg", "c.jpg"];
+      let cnt = 0;
+      function show(type){
+            let img = document.querySelector("#my");
+
+            if(type === 'next' && cnt < arr.length-1){
+                  img.src = arr[cnt+1];
+                  cnt++;
+                  console.log(cnt);
+            }else if(type === 'prev' && cnt > 0){
+                  img.src = arr[cnt-1];
+                  cnt--;
+                  console.log(cnt);
+            }
+            document.querySelector("#result").innerHTML = arr[cnt];
+      }
+      
+</script>
+</head>
+<body>
+이미지 변경하기<br>
+<img src="a.jpg" width="100" height="100" id="my">
+<button onclick="show('prev')">이전</button><button onclick="show('next')">다음</button><br>
+이미지 파일명:<span id="result">a.jpg</span>
+</body>
+</html>

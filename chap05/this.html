@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+        const init = () => {
+            // let p = document.querySelector("p");
+            // p.onclick = clickHandler;
+
+            let spanList = document.querySelectorAll("span");
+            spanList.forEach((span)=>{
+                span.addEventListener("click",(e)=>{
+                    console.log(span.innerHTML);
+                    console.log(e.target);
+                });
+            });
+        }
+
+        const clickHandler = (p) => {
+            console.log("-----");
+            console.log(p.innerHTML);
+        }
+
+    </script>
+</head>
+<body onload="init()">
+    <p id="p1" onclick="clickHandler(this)">one</p>
+    <p id="p2" onclick="clickHandler(this)">two</p>
+    <p id="p3" onclick="clickHandler(this)">three</p>
+    <hr/>
+    <span>first</span>
+    <span>second</span>
+    <span>third</span>
+</body>
+</html>

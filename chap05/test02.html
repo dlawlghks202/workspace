@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+</head>
+<body>
+    <input type="text" />
+    <script>
+        let keyEl = document.querySelector("input");
+        keyEl.addEventListener("keydown",(e) => {
+            console.log(e.keyCode);
+            console.log(e.ctrlKey);
+            // if(e.ctrlKey){
+            //     alert("ctrl 눌림");
+            // }
+        });
+    </script>
+</body>
+</html>

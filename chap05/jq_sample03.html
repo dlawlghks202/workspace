@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("input:submit").on("click",function(){
+                let pwd = $("#pwd").val();
+                let pwdchk = $("#pwdchk").val();
+                let dept = $("option:selected").val();
+                if((pwd.length>0 && pwdchk.length>0) && (pwd === pwdchk)){
+                    alert("일치!");
+                }else{
+                    alert("불일치 ㅠ");
+                }
+                console.log("부서 :" +dept);
+            });
+
+            $("#pwd").on("keydown",function(){
+                let input = $(this).val();
+                if(input.length !== 0){
+                    $("#pwdchk").prop("disabled",false);
+                }else{
+                    $("#pwdchk").prop("disabled",true);
+                }              
+            });      
+            
+            $("#dupCheck").on("click",function(){
+                window.open("jq_sample03_1.html","checkUI","width=300px,height=300px");
+            });
+        });
+    </script>
+</head>
+<body>
+    ID : <input id="memId" type="text" readonly /><button id="dupCheck">중복확인</button>
+    PWD : <input id="pwd" type="password" />
+    CHK-PWD : <input id="pwdchk" type="password" disabled /><br/>
+    DEPT : <select>
+            <option>정치</option>
+            <option>경제</option>
+            <option>사회</option>
+            <option>문화</option>
+           </select><br/>
+           <input type="submit" value="ADD"/>
+</body>
+</html>

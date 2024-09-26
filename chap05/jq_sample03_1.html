@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("button").on("click",function(){
+                let id = $("input:text").val();
+                opener.document.querySelector("#memId").value = id; //나를 열어준 부모쪽에 대한 정보 추출가능
+                window.close();
+                
+            });
+        });
+    </script>
+</head>
+<body>
+    <input type="text" />
+    <button>확인~</button>
+</body>
+</html>

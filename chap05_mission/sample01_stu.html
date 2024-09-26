@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+        function count(type){
+            let cnt = document.querySelector("#quantity");
+            //console.log(cnt.value);
+       
+            if(type === 'plus'){
+                cnt.value++;
+                console.log(cnt.value);
+            }else if(type === 'minus' && cnt.value>1){
+                cnt.value--;
+                console.log(cnt.value);
+            }
+        }
+
+</script>
+</head>
+<body>
+갯수<input type="text" name="quantity"  id="quantity" value="1">
+<button onclick="count('plus')" id="up">+</button><button onclick="count('minus')" id="down">-</button>
+</body>
+</html>

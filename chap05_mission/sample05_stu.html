@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+  window.onload = function(){
+    let imgs = document.getElementsByTagName("img");
+    console.log(imgs);
+    for(let i=0;i<imgs.length;i++){     
+        imgs[i].onmouseover = function(){
+            let img = imgs[i];
+            console.log(img.src);
+            document.querySelector("#result").innerHTML = "<h1>" + img.src.substring(img.src.lastIndexOf('/') + 1) + "</h1>";
+        }
+        imgs[i].onmouseleave = function(){
+            let img = imgs[i];
+            console.log(img.src);
+            document.querySelector("#result").innerHTML = "<h1></h1>";
+        }
+    }
+    
+  }
+
+</script>
+</head>
+<body>
+이미지 이름 알아보기<br>
+<img src="a.jpg" width="100" height="100">
+<img src="b.jpg" width="100" height="100">
+<img src="c.jpg" width="100" height="100"><br>
+파일명:<span id="result"></span>
+</body>
+</html>
