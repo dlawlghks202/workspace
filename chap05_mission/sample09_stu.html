@@ -5,24 +5,52 @@
 <title>Insert title here</title>
 <script type="text/javascript">
 
-        function chk(){
+        // function chk(){
+        //     let chkAll = document.querySelector("#all");
+        //     let chkbox = document.querySelectorAll(".lang");
+        //     console.log(chkbox);
+        //     chkbox.forEach(function(box) {
+        //         console.log(box);
+        //     box.checked = chkAll.checked;
+        //     });
+        // }
+        
+        window.onload = function(){
             let chkAll = document.querySelector("#all");
             let chkbox = document.querySelectorAll(".lang");
-            console.log(chkbox);
-            chkbox.forEach(function(box) {
-            box.checked = chkAll.checked;
+            chkAll.addEventListener("click",()=>{
+                for(let i=0;i<chkbox.length;i++){
+                    chkbox[i].checked = chkAll.checked;
+                }
             });
+
+
+            for(let i=0;i<chkbox.length;i++){
+                chkbox[i].addEventListener("click",()=>{
+                    if(!chkbox[i].checked){
+                        chkAll.checked = false;
+                    }else{
+                        let isAll = true;
+                        for(let j=0;j<chkbox.length;j++){
+                            if(!chkbox[i].checked){
+                                isAll = false;
+                                break;
+                            }
+                        }
+                        chkAll.checked = isAll;
+                    }
+                });
+            }
         }
-        
-        
 
 </script>
 </head>
 <body>
-전체선택
-<input id="all" type="checkbox" name="all" onclick="chk()"><br>
-<input type="checkbox" name="java" class="lang">java<br>
-<input type="checkbox" name="sql" class="lang">sql<br>
-<input type="checkbox" name="angular" class="lang">angular<br>
+    전체선택
+    <input id="all" type="checkbox" name="all"><br>
+    <!--<input id="all" type="checkbox" name="all" onclick="chk()"><br>-->
+    <input type="checkbox" name="java" class="lang">java<br>
+    <input type="checkbox" name="sql" class="lang">sql<br>
+    <input type="checkbox" name="angular" class="lang">angular<br>
 </body>
 </html>

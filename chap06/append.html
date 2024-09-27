@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("div").html("<h1>으오어어어어어</h1>");
+            $("p").text("<h1>으아아아아</h1>");
+            //$("span").remove();
+            $("span").empty();
+            $("span").html("asd");
+
+            let newEle = $("<h1></h1>").html("흐하하하하");
+            newEle.appendTo("body");
+
+            let newEle2 = $("<p>두번째</p>");
+            $("body").append(newEle2, $("<p>세번째</p>"), $("<p>네번째</p>"));
+        });
+    </script>
+</head>
+<body>
+    <div></div>
+    <p></p>
+    <span>제거 대상 데이터</span>
+</body>
+</html>

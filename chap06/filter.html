@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("h3").filter(function(idx,item){
+                console.log(item);
+                return idx % 3 === 0;
+            }).css("background-color","red");
+        });
+    </script>
+</head>
+<body>
+    <h3>one</h3>
+    <h3>two</h3>
+    <h3>three</h3>
+    <h3>44444</h3>
+    <h3>5555</h3>
+    <h3>6666</h3>
+</body>
+</html>

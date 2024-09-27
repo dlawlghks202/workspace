@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            // $("h1").on("click",function(){
+            //     $("div").append(`<h1>${$("h1").html()}</h1>`);
+            // });
+
+            // $("div").on("click",function(){
+            //     $("div").append(`<h1>${$("h1").html()}</h1>`);
+            // });
+
+            $("div").on("click","h1",function(){
+                console.log($("h1").length);
+                console.log($(this).html());
+            });
+        });
+    </script>
+</head>
+<body>
+    <div>
+        <h1>데이터</h1>
+    </div>
+    
+</body>
+</html>

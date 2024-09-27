@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            let doc = "<list>";
+                doc += "<data>";
+                doc += "<name>hong</name>";
+                doc += "<price>1000</price>";
+                doc += "</data>";
+
+                doc += "<data>";
+                doc += "<name>park</name>";
+                doc += "<price>1000</price>";
+                doc += "</data>";
+
+                doc += "<data>";
+                doc += "<name>kim</name>";
+                doc += "<price>1000</price>";
+                doc += "</data>";
+
+                doc += "</list>";
+                let trList = "";
+                let xmlData = $.parseXML(doc);
+                $(xmlData).find("data").each(function(index,item){
+                    let nameVal = $(item).find("name").text();
+                    let priceVal = $(item).find("price").text();
+
+                    let result = "<tr>";
+                        result += "<td>" + nameVal + "</td>";
+                        result += "<td>" + priceVal + "</td>";
+                        result += "</tr>"; 
+
+                    trList += result;
+                });
+
+                $("table").html(trList);
+        });
+    </script>
+</head>
+<body>
+    <table border="1"></table>
+</body>
+</html>

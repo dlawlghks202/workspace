@@ -12,7 +12,9 @@
 	   let chk = $("input[type='checkbox']");
 	   $("input[type='checkbox']").on("change",function(){
 		str="";
-		$("input[type='checkbox']:checked").each(function(){
+		$("input[type='checkbox']:checked").each(function(index,item){
+				console.log("index: " + index);
+				console.log("item: " + item);
 				str += $(this).val() + " ";
 				console.log(str);
 		});

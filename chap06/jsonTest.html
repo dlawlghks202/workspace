@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        const list = [
+            {"name" : "hong","addr":"seoul"},
+            {"name" : "park","addr":"busan"},
+            {"name" : "lee","addr":"la"}
+        ];
+
+        $(document).ready(function(){
+            $("div").append(function (index){
+                let item1 = `<h1>${list[index].name}</h1>`;
+                let item2 = `<h1>${list[index].addr}</h1>`;
+
+                return item1 + item2;
+            });
+        });
+    </script>
+</head>
+<body>
+    <div></div>
+    <div></div>
+</body>
+</html>
