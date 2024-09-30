@@ -10,7 +10,8 @@
 	$(document).ready(function() {
 	$("#a").on("click", function() {
 		let idVal = $("input:text").val();
-		opener.document.querySelector("#userid").value = idVal;
+		//opener.document.querySelector("#userid").value = idVal;
+		opener.$("#userid").val(idVal);
 		window.close();
 	});
 		

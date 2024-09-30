@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            let tr;
+
+            $.ajax({
+                url: "orderList.json",
+                dataType: "json",
+                success: function (data) {
+                    for (let i = 0; i < data.length; i++) {
+                        let order = data[i];
+                        let quantity = 0;
+                        let price = 0;
+                        let items = order.orderItems;
+                        items.forEach(item => {
+                            quantity += item.quantity;
+                            price += item.itemPrice * item.quantity;
+                        });
+                        tr = "<tr>";
+                        tr += "<td>" + data[i].orderNum + "</td>";
+                        tr += `<td><a href='javascript:clkName(${data[i].orderNum})'>${data[i].memName}</a></td>`; // orderNum을 전달
+                        tr += "<td>" + data[i].orderDt + "</td>";
+                        tr += "<td>" + quantity + "</td>";
+                        tr += "<td>" + price + "</td>";
+                        tr += "</tr>";
+
+                        $("table:first").append(tr);
+                    }
+                }
+            });
+
+            // 검색 버튼 클릭 이벤트
+            $("button").on("click", function () {
+                let input = $("input").val();
+                $.ajax({
+                    url: "orderList.json",
+                    dataType: "json",
+                    success: function (data) {
+                        $("table:last").find("tr:gt(0)").remove(); // 기존 데이터 제거
+
+                        for (let i = 0; i < data.length; i++) {
+                            let orderNum = data[i].orderNum;
+
+                            if (input == orderNum) {
+                                let order = data[i];
+                                let items = order.orderItems;
+                                let totalQuantity = 0;
+                                let totalPrice = 0;
+
+                                for (let j = 0; j < items.length; j++) {
+                                    let itemNum = items[j].itemNum;
+                                    let itemName = items[j].itemName;
+                                    let itemPrice = items[j].itemPrice;
+                                    let quantity = items[j].quantity;
+
+                                    totalQuantity += quantity;
+                                    totalPrice += itemPrice * quantity;
+
+                                    // 테이블 행 추가
+                                    let tr = "<tr>";
+                                    tr += `<td>${orderNum}</td>`;
+                                    tr += `<td>${itemNum}</td>`;
+                                    tr += `<td>${itemName}</td>`;
+                                    tr += `<td>${itemPrice}</td>`;
+                                    tr += `<td>${quantity}</td>`;
+                                    tr += "</tr>";
+                                    $("table:last").append(tr);
+                                }
+                                break; // 주문을 찾으면 반복 종료
+                            }
+                        }
+                    },
+                });
+            });
+        });
+
+        // 클릭 이벤트 함수
+        function clkName(num) { // num을 매개변수로 받음
+            $.ajax({
+                url: "orderList.json",
+                dataType: "json",
+                success: function (data) {
+                    $("table:last").find("tr:gt(0)").remove(); // 기존 데이터 제거
+
+                    for (let i = 0; i < data.length; i++) {
+                        let orderNum = data[i].orderNum;
+
+                        if (num == orderNum) { // num을 사용하여 주문 조회
+                            let order = data[i];
+                            let items = order.orderItems;
+                            let totalQuantity = 0;
+                            let totalPrice = 0;
+
+                            for (let j = 0; j < items.length; j++) {
+                                let itemNum = items[j].itemNum;
+                                let itemName = items[j].itemName;
+                                let itemPrice = items[j].itemPrice;
+                                let quantity = items[j].quantity;
+
+                                totalQuantity += quantity;
+                                totalPrice += itemPrice * quantity;
+
+                                // 테이블 행 추가
+                                let tr = "<tr>";
+                                tr += `<td>${orderNum}</td>`;
+                                tr += `<td>${itemNum}</td>`;
+                                tr += `<td>${itemName}</td>`;
+                                tr += `<td>${itemPrice}</td>`;
+                                tr += `<td>${quantity}</td>`;
+                                tr += "</tr>";
+                                $("table:last").append(tr);
+                            }
+                            break; // 주문을 찾으면 반복 종료
+                        }
+                    }
+                },
+            });
+        }
+    </script>
+</head>
+
+<body>
+    <h3>상품 주문 목록</h3>
+    <hr />
+    <p>
+        검색 : <input type="text" /><button>검색</button>
+    </p>
+    <table border="1">
+        <tr>
+            <th>Order Num</th>
+            <th>Member Name</th>
+            <th>Order date</th>
+            <th>Product Count</th>
+            <th>Total Price</th>
+        </tr>
+    </table>
+    <hr />
+    <div>
+        <table border="1">
+            <tr>
+                <th>Order Num</th>
+                <th>item Num</th>
+                <th>item Name</th>
+                <th>price</th>
+                <th>order qty</th>
+            </tr>
+        </table>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+       let currentPage = 1; //현재 페이지
+       const itemsPerPage = 5; //페이지당 5개 게시글
+
+        $(document).ready(function () {
+            $.ajax({
+                url: "boardList.json",
+                dataType: "json",
+                success: function (data) {
+                    const totalItems = data.length;//총 게시글 수
+                    const tatalPages = Math.ceil(totalItems/itemsPerPage); //총 페이지 수 4페이지
+                    
+                    //초기화
+                    function renderPage(page){
+                        $("table").find("tr:gt(0)").remove(); // 기존 데이터 제거
+                        const start = (page-1) * itemsPerPage; //시작인덱스
+                        const end = Math.min(start + itemsPerPage,totalItems);//끝 인덱스
+
+                        //데이터 추가
+                        for(let i=start;i<end;i++){
+                            const board = data[i];
+                            let tr = "<tr>";
+                            tr += `<td>${board.num}</td>`;
+                            tr += `<td><a href="#">${board.title}</a></td>`;
+                            tr += `<td>${board.createDt}</td>`;
+                            tr += `<td>${board.hit}</td>`;
+                            tr += `</tr>`;
+                            $("table tbody").append(tr);
+                        }
+                    }
+
+                    //페이지네이션 버튼 생성
+                    function renderPagination(){
+                        for(let i=1;i<=tatalPages;i++){
+                            const btn = `<button class="page-btn" data-page="${i}">${i}</button>`;
+                            $("span").append(btn);
+                        }
+                    }
+
+                    renderPage(currentPage);
+                    renderPagination();
+
+                    $(".page-btn").on("click",function(){
+                        currentPage = $(this).data("page");
+                        renderPage(currentPage);
+                    });
+                }
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <table border="1">
+        <tr>
+            <th>Num</th>
+            <th>Title</th>
+            <th>Create Date</th>
+            <th>Hit</th>
+        </tr>
+    </table>
+    <div>페이지 번호 : <span></span></div>
+</body>
+
+</html>
