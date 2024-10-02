@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+
+            $.ajax({
+                url: "orderList.json",
+                dataType: "json",
+                success: function (data) {
+                    let trList = "";
+                    let tot = 0;
+                    let cnt = 0;
+                    $.each(data, function(index,item){
+                        $.each(item.orderItems,function(index,oItem){
+                            cnt += oItem.quantity;
+                            tot += (oItem.itemPrice * oItem.quantity);
+                        });
+                        trList += "<tr>";
+                        trList += `<td>${item.orderNum}</td>`;
+                        trList += `<td><a href='javascript:showItemList(${item.orderNum})'>${item.memName}</a></td>`;
+                        trList += `<td>${item.orderDt}</td>`;
+                        trList += `<td>${cnt}</td>`;
+                        trList += `<td>${tot}</td>`;
+                        cnt=0;
+                        tot=0;
+                    });
+                    $("table:first").append(trList);
+                }
+            });
+
+           
+        });
+    
+        const showItemList =(orderNum) => {
+            for(let i=0;i<orderData.length;i++){
+                $.each(item.orderItems,function(){
+                    trList += "<tr>";
+                    trList += "<tr>";
+                });
+            }
+        }
+
+    </script>
+</head>
+
+<body>
+    <h3>상품 주문 목록</h3>
+    <hr />
+    <p>
+        검색 : <input type="text" /><button>검색</button>
+    </p>
+    <table border="1">
+        <tr>
+            <th>Order Num</th>
+            <th>Member Name</th>
+            <th>Order date</th>
+            <th>Product Count</th>
+            <th>Total Price</th>
+        </tr>
+    </table>
+    <hr />
+    <div>
+        <table border="1">
+            <tr>
+                <th>Order Num</th>
+                <th>item Num</th>
+                <th>item Name</th>
+                <th>price</th>
+                <th>order qty</th>
+            </tr>
+        </table>
+    </div>
+</body>
+
+</html>

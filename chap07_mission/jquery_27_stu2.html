@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+        let boardList;
+
+        $(document).ready(function(){
+            $.ajax({
+                url : "boardList.json",
+                dataType: "json",
+                success: function(data){
+                    boardList = data;
+
+                    showPage(1);
+
+                    let tr = "";
+                    // $.each(data,function(index, board){
+                    //     tr += "<tr>";
+                    //     tr += `<td>${board.num}</td>`;
+                    //     tr += `<td>${board.title}</td>`;
+                    //     tr += `<td>${board.createDt}</td>`;
+                    //     tr += `<td>${board.hit}</td>`;
+                    //     tr += "</tr>";
+                    // });
+                    // $("table").append(tr);
+                }
+            });
+        });
+        const showPage = (pageNum) => {
+            let rowCnt = 5;
+            let start = (pageNum-1) * rowCnt;
+            let end = start + rowCnt;
+
+            if((start + rowCnt) > boardList.length){
+                end = boardList.length;
+            }
+            let tr = "";
+            for(let i=0;i<boardList.length;i++){
+                tr += `<tr>`;
+                tr += `<td>${boardList[i].num}</td>`;
+                tr += `<td>${boardList[i].title}</td>`;
+                tr += `<td>${boardList[i].createDt}</td>`;
+                tr += `<td>${boardList[i].hit}</td>`;
+            }
+            $("table").append(tr);
+        }
+    </script>
+</head>
+
+<body>
+    <table border="1">
+        <tr>
+            <th>Num</th>
+            <th>Title</th>
+            <th>Create Date</th>
+            <th>Hit</th>
+        </tr>
+    </table>
+    <div>페이지 번호 : <span></span></div>
+</body>
+
+</html>

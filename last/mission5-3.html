@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script>
+
+        function addMember() {
+            let id = document.querySelector("#id").value;
+            let pw = document.querySelector("#pw").value;
+            let name = document.querySelector("#name").value;
+            let email = document.querySelector("#email").value;
+            let createDt = new Date();
+            let year = createDt.getFullYear();
+            let month = String(createDt.getMonth() + 1).padStart(2, '0');
+            let day = String(createDt.getDate()).padStart(2, '0');
+            let formatDate = `${year}-${month}-${day}`;
+
+            let arr = [];
+            function Member(id, pw, name, email, formatDate) {
+                this.id = id;
+                this.pw = pw;
+                this.name = name;
+                this.email = email;
+                this.formatDate = formatDate;
+            }
+            let member = new Member(id, pw, name, email, formatDate);
+            arr.push(member);
+            //console.log(arr);
+
+
+
+            for (let i = 0; i < arr.length; i++) {
+                let tr = document.querySelector("tbody").insertRow();
+                Object.values(member).forEach(value => {
+                    let td = tr.insertCell();
+                    td.innerHTML = value;
+                });
+            }
+        }
+
+        function delMember(){
+            let id = document.querySelector("#id").value;
+            let tr = document.querySelectorAll("#tbody tr");
+            for(let i=0;i<tr.length;i++){
+                let td = tr[i].querySelector("td:first-child").innerHTML;
+                if(id == td){
+                    tr[i].remove();
+                }
+            }
+        }
+
+    </script>
+</head>
+
+<body>
+    <h1>사용자 관리</h1>
+    <input type="button" value="전체조회" />
+    <input type="text" id="search" />
+    <input type="button" value="ID검색" />
+    <table border="1">
+        <thead>
+        <tr>
+            <th>사원ID</th>
+            <th>비번</th>
+            <th>이름</th>
+            <th>이메일</th>
+            <th>생성일</th>
+        </tr>
+    </thead>
+        <tbody id="tbody">
+
+        </tbody>
+    </table>
+    <hr />
+    <table border="1">
+        <tr>
+            <td>사원ID</td>
+            <td><input type="text" id="id" /></td>
+        </tr>
+        <tr>
+            <td>비번</td>
+            <td><input type="text" id="pw" /></td>
+        </tr>
+        <tr>
+            <td>이름</td>
+            <td><input type="text" id="name" /></td>
+        </tr>
+        <tr>
+            <td>이메일</td>
+            <td><input type="email" id="email" /></td>
+        </tr>
+    </table>
+    <input type="button" onclick="addMember()" value="추가" />
+    <input type="button" onclick="delMember()" value="삭제" />
+    <input type="button" value="수정" />
+
+</body>
+
+</html>
